@@ -1,0 +1,28 @@
+<persistence-unit name="UnidadMySQL" transaction-type="RESOURCE_LOCAL">
+
+    <!--Que clases queremos mapear-->
+    <class>
+        org.example.Pelicula
+    </class>
+
+    <properties>
+        <!--Qué bdd usar-->
+        <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+
+        <!--Donde esta la BD-->
+        <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/pruebadb"/>
+
+        <!--Credenciales-->
+        <property name="javax.persistence.jdbc.user" value="root"/>
+        <property name="javax.persistence.jdbc.password" value=""/>
+
+        <!--Que lenguaje de BD se usa-->
+        <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
+        <property name="hibernate.show_sql" value="true"/>
+        <property name="hibernate.format_sql" value="true"/>
+        <property name="javax.persistence.schema-generation.database.action" value="update"/>
+
+        <!--¿Qué pasa cuando inicio la app?-->
+        <property name="hibernate.hbm2ddl.auto" value="create-drop"/>
+    </properties>
+</persistence-unit>
