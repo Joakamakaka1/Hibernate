@@ -1,9 +1,6 @@
 package org.example;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 import java.util.Date;
 
@@ -12,28 +9,29 @@ import java.util.Date;
 public class Pelicula {
 
     @Id
-    private String id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-    @Column
+    @Column(name = "titulo", length = 50, unique = true, nullable = false)
     private String titulo;
 
-    @Column
+    @Column(name = "autor", length = 50, nullable = false)
     private String autor;
 
-    @Column
+    @Column(name = "fechaLanzamiento", nullable = false)
+    @Temporal(TemporalType.DATE)
     private Date fechaLanzamiento;
 
     public Pelicula() {
 
     }
-    public Pelicula(String id, String titulo, String autor, Date fechaLanzamiento) {
-        this.id = id;
+    public Pelicula(String titulo, String autor, Date fechaLanzamiento) {
         this.titulo = titulo;
         this.autor = autor;
         this.fechaLanzamiento = fechaLanzamiento;
     }
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
@@ -49,7 +47,7 @@ public class Pelicula {
         return fechaLanzamiento;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -64,6 +62,4 @@ public class Pelicula {
     public void setFechaLanzamiento(Date fechaLanzamiento) {
         this.fechaLanzamiento = fechaLanzamiento;
     }
-
-
 }

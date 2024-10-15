@@ -6,6 +6,9 @@
              version="2.2">
     <persistence-unit name="UnidadMySQL" transaction-type="RESOURCE_LOCAL">
         <class>org.example.Pelicula</class>
+        <class>org.example.Cine</class>
+        <class>org.example.Direccion</class>
+        <class>org.example.Director</class>
         <properties>
             <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
             <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/pruebadb"/>
