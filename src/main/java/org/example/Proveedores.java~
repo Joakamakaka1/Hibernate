@@ -1,0 +1,88 @@
+package org.example;
+
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "proveedor")
+public class Proveedores {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(name = "nombre", length = 50, nullable = false)
+    private String nombre;
+
+    @Column(name = "direccion", length = 50, nullable = false)
+    private String direccion;
+
+    @Column(name = "telefono", length = 50, nullable = false)
+    private String telefono;
+
+    @Column(name = "email", length = 50, unique = true, nullable = false)
+    private String email;
+
+    @Column(name = "cif", length = 50, nullable = false)
+    private String cif;
+
+    public Proveedores() {
+
+    }
+
+    public Proveedores(Long id, String nombre, String direccion, String telefono, String email, String cif) {
+        this.id = id;
+        this.nombre = nombre;
+        this.direccion = direccion;
+        this.telefono = telefono;
+        this.email = email;
+        this.cif = cif;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getCif() {
+        return cif;
+    }
+
+    public void setCif(String cif) {
+        this.cif = cif;
+    }
+}

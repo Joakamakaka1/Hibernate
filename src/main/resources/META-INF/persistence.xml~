@@ -8,6 +8,7 @@
         <class>org.example.Pelicula</class>
         <class>org.example.Cine</class>
         <class>org.example.Direccion</class>
+        <class>org.example.Director</class>
         <properties>
             <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
             <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/pruebadb"/>
@@ -20,4 +21,24 @@
             <property name="hibernate.hbm2ddl.auto" value="create-drop"/>
         </properties>
     </persistence-unit>
+
+    <persistence-unit name="UnidadMySQL2" transaction-type="RESOURCE_LOCAL">
+        <class>org.example.instuto.Instituto</class>
+        <class>org.example.instuto.Director</class>
+        <class>org.example.instuto.Proveedor</class>
+        <class>org.example.instuto.Inspector</class>
+        <class>org.example.instuto.Departamento</class>
+        <properties>
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/pruebadb2"/>
+            <property name="javax.persistence.jdbc.user" value="root"/>
+            <property name="javax.persistence.jdbc.password" value=""/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+            <property name="javax.persistence.schema-generation.database.action" value="update"/>
+            <property name="hibernate.hbm2ddl.auto" value="create-drop"/>
+        </properties>
+    </persistence-unit>
+
 </persistence>
